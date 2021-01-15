@@ -81,7 +81,7 @@ static void vcpu_pre_run(struct kvm_vcpu *vcpu) {
 	struct vcpu_offset_info *off_info;
 	int tsc_off = constant_tsc_offset;
 
-	tsc_offset = kvm_x86_ops.read_l1_tsc_offset(vcpu);
+	tsc_offset = vcpu->arch.l1_tsc_offset;
 	new_tsc_offset = tsc_offset;
 	off_info = get_cpu_offset_info(vcpu);
 
